@@ -1,7 +1,7 @@
 import React  from 'react';
 
 
-    const Ninjas = ({ninjas}) => {    // we have ninjas of the props so we are destructuring directly inside the brackets where we receive the props
+    const Ninjas = ({ninjas, deleteNinja}) => {    // we have ninjas of the props so we are destructuring directly inside the brackets where we receive the props
         const ninjaList = ninjas.map (ninja => {
            // const {ninjas} = props;
            if(ninja.age > 20) {
@@ -10,7 +10,7 @@ import React  from 'react';
                     <div>{ninja.name}</div>
                     <div>{ninja.age}</div>
                     <div>{ninja.belt}</div>
-                    
+                    <button onClick={() => {deleteNinja(ninja.id)}}>Delete ninja</button>
                     </div>
                 )
            } else {
