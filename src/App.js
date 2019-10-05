@@ -13,13 +13,22 @@ class App extends Component{
         {name:'Jack',age:15,belt:'blue',id:7}
     ]
 }
+
+addNinja = (ninja1) => {
+  ninja1.id = Math.random(); // the math.random function will produce different numbers that will serve as unique ids
+  var ninjas = [...this.state.ninjas, ninja1];
+  this.setState ({
+    ninjas:ninjas
+  })
+}
   render(){
     return (
       <div className="App">
         <h1>My first React App!</h1>
         <p>Welcome :)</p>
         <Ninjas ninjas={this.state.ninjas}/>
-        <AddNinja/>
+        <AddNinja addNinja={this.addNinja}/>
+        
       </div>
     )
   }

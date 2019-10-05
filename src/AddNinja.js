@@ -17,6 +17,7 @@ class AddNinja extends Component {
     handleSubmit = (e) => {
         e.preventDefault(); // this will prevent the default action of a form being submitted which is to refresh the page
         console.log(this.state); // this will log the state to the console at the time in which the user submits the form
+        this.props.addNinja(this.state);
     }
     render () {
         return (
