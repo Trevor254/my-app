@@ -23,7 +23,13 @@ addNinja = (ninja1) => {
 }
 
 deleteNinja = (id) => {
-  console.log(id)  
+  var ninjas = this.state.ninjas.filter(ninja1 => {
+  return ninja1.id !== id
+});
+this.setState ({
+   ninjas:ninjas
+})
+
 }
   render(){
     return (
